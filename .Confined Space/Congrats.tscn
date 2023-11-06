@@ -1,0 +1,19 @@
+[gd_scene format=2]
+
+[node name="Congrats" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -15.5
+margin_right = 64.0
+margin_bottom = 15.5
+text = "!! Congratulations !!
+You beat the game."
+align = 1
+valign = 1

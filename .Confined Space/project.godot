@@ -1,0 +1,155 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Algorithm",
+"language": "GDScript",
+"path": "res://src/algorithms/Algorithm.gd"
+}, {
+"base": "Algorithm",
+"class": "BinaryTree",
+"language": "GDScript",
+"path": "res://src/algorithms/BinaryTree.gd"
+}, {
+"base": "Reference",
+"class": "Cell",
+"language": "GDScript",
+"path": "res://src/Cell.gd"
+}, {
+"base": "Algorithm",
+"class": "Eller",
+"language": "GDScript",
+"path": "res://src/algorithms/Eller.gd"
+}, {
+"base": "Reference",
+"class": "Maze",
+"language": "GDScript",
+"path": "res://src/Maze.gd"
+}, {
+"base": "Node",
+"class": "MazeGenerator",
+"language": "GDScript",
+"path": "res://src/Maze Generator.gd"
+}, {
+"base": "Algorithm",
+"class": "Prim",
+"language": "GDScript",
+"path": "res://src/algorithms/Prim.gd"
+}, {
+"base": "Algorithm",
+"class": "RecursiveBacktracker",
+"language": "GDScript",
+"path": "res://src/algorithms/RecursiveBacktracker.gd"
+}, {
+"base": "Algorithm",
+"class": "RecursiveDivision",
+"language": "GDScript",
+"path": "res://src/algorithms/RecursiveDivision.gd"
+}, {
+"base": "Reference",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://src/algorithms/Utils.gd"
+} ]
+_global_script_class_icons={
+"Algorithm": "",
+"BinaryTree": "",
+"Cell": "",
+"Eller": "",
+"Maze": "",
+"MazeGenerator": "",
+"Prim": "",
+"RecursiveBacktracker": "",
+"RecursiveDivision": "",
+"Utils": ""
+}
+
+[application]
+
+config/name="Confined Space"
+run/main_scene="res://Start_Menu.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/fullscreen=true
+window/stretch/mode="2d"
+
+[gui]
+
+theme/custom_font="res://assets/VCR_OSD_MONO_1.001.ttf"
+
+[importer_defaults]
+
+texture={
+"flags/filter": false
+}
+
+[input]
+
+scroll_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+scroll_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_flashlight={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true
+quality/filters/msaa=1
+environment/default_environment="res://default_env.tres"
+quality/2d/use_pixel_snap=true

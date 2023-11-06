@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Complete.gd" type="Script" id=2]
+[ext_resource path="res://GoalRange.gd" type="Script" id=3]
+[ext_resource path="res://assets/Sprite/door/Goal2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Sprite/door/Goal1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Sprite/door/Goal3.png" type="Texture" id=6]
+[ext_resource path="res://assets/Sprite/door/Goal4.png" type="Texture" id=7]
+[ext_resource path="res://assets/Sprite/door/Goal0.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 95.0
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "Closed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Opened",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "Opening",
+"speed": 3.0
+} ]
+
+[node name="Complete" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+margin_left = -15.0
+margin_top = -7.0
+margin_right = 14.0
+margin_bottom = 5.0
+bbcode_text = "Goal"
+text = "Goal"
+scroll_active = false
+
+[node name="GoalRange" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GoalRange"]
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GoalRange"]
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 3 )
+animation = "Closed"
+
+[connection signal="animation_finished" from="GoalRange/AnimatedSprite" to="GoalRange" method="_on_AnimatedSprite_animation_finished"]

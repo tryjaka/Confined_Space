@@ -1,0 +1,244 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://road_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UpgradeStation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene_Changer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Main_Menu.gd" type="Script" id=6]
+[ext_resource path="res://Font_Theme.tres" type="Theme" id=7]
+[ext_resource path="res://GameEnd.gd" type="Script" id=8]
+[ext_resource path="res://assets/Sprite/Object/RoundLight.png" type="Texture" id=9]
+[ext_resource path="res://assets/Sprite/door/Entryway.png" type="Texture" id=10]
+[ext_resource path="res://assets/Sprite/door/Entryway Locked.png" type="Texture" id=11]
+[ext_resource path="res://Levels.gd" type="Script" id=12]
+[ext_resource path="res://assets/Sprite/Archer Logo.png" type="Texture" id=13]
+[ext_resource path="res://Item_Fuel.tscn" type="PackedScene" id=14]
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+
+[sub_resource type="DynamicFont" id=1]
+size = 9
+font_data = ExtResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[node name="Main_Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.266667, 0.968627, 0.27451, 0.411765 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 3 )
+stretch_mode = 2
+
+[node name="Levels" type="Node2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="TileMap" type="TileMap" parent="Levels"]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 65537, 9, 0, 65538, 11, 0, 65539, 1, 0, 65540, 11, 0, 65541, 1, 0, 65542, 5, 0, 65543, 11, 0, 65544, 3, 0, 131073, 10, 0, 131074, 15, 0, 131075, 15, 0, 131076, 15, 0, 131077, 15, 0, 131078, 15, 0, 131079, 15, 0, 131080, 7, 0, 196609, 10, 0, 196610, 15, 0, 196611, 15, 0, 196612, 15, 0, 196613, 15, 0, 196614, 15, 0, 196615, 15, 0, 196616, 7, 0, 262145, 12, 0, 262146, 14, 0, 262147, 14, 0, 262148, 12, 0, 262149, 5, 0, 262150, 14, 0, 262151, 5, 0, 262152, 6, 0 )
+
+[node name="ArcherLogo" type="Sprite" parent="Levels"]
+position = Vector2( 320, 192 )
+scale = Vector2( 3.8, 3.8 )
+texture = ExtResource( 13 )
+
+[node name="level_1" parent="Levels" instance=ExtResource( 4 )]
+position = Vector2( 161, 98 )
+next_scene = "res://Levels/MazeLVL_1.tscn"
+
+[node name="Label" type="Label" parent="Levels/level_1"]
+margin_left = -17.0
+margin_top = 18.0
+margin_right = 18.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL
+1"
+align = 1
+
+[node name="level_2" parent="Levels" instance=ExtResource( 4 )]
+position = Vector2( 224, 98 )
+next_scene = "res://Levels/MazeLVL_2.tscn"
+
+[node name="Label" type="Label" parent="Levels/level_2"]
+margin_left = -17.0
+margin_top = 18.0
+margin_right = 18.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL
+2"
+align = 1
+
+[node name="level_3" parent="Levels" instance=ExtResource( 4 )]
+position = Vector2( 288, 98 )
+next_scene = "res://Levels/MazeLVL_3.tscn"
+
+[node name="Label" type="Label" parent="Levels/level_3"]
+margin_left = -17.0
+margin_top = 18.0
+margin_right = 18.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL
+3"
+align = 1
+
+[node name="level_4" parent="Levels" instance=ExtResource( 4 )]
+position = Vector2( 352, 98 )
+next_scene = "res://Levels/MazeLVL_4.tscn"
+
+[node name="Label" type="Label" parent="Levels/level_4"]
+margin_left = -17.0
+margin_top = 18.0
+margin_right = 18.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL
+4"
+align = 1
+
+[node name="level_5" parent="Levels" instance=ExtResource( 4 )]
+position = Vector2( 160, 285 )
+rotation = 3.14159
+next_scene = "res://Levels/MazeLVL_5.tscn"
+
+[node name="Label" type="Label" parent="Levels/level_5"]
+margin_left = -18.0
+margin_top = 19.0001
+margin_right = 17.0
+margin_bottom = 38.0001
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 17.6217, 9.03647 )
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL
+5"
+align = 1
+
+[node name="level_6" parent="Levels" instance=ExtResource( 4 )]
+position = Vector2( 224, 285 )
+rotation = 3.14159
+next_scene = "res://Levels/MazeLVL_6.tscn"
+
+[node name="Label" type="Label" parent="Levels/level_6"]
+margin_left = -18.0
+margin_top = 19.0001
+margin_right = 17.0
+margin_bottom = 38.0001
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 17.6217, 9.03647 )
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL
+6"
+align = 1
+
+[node name="Endless" parent="Levels" instance=ExtResource( 4 )]
+position = Vector2( 541, 225 )
+rotation = 1.5708
+next_scene = "res://Levels/Endless.tscn"
+
+[node name="Label" type="Label" parent="Levels/Endless"]
+margin_left = -18.0
+margin_top = 30.0
+margin_right = 17.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 17.6217, 9.03647 )
+custom_fonts/font = SubResource( 1 )
+text = "ENDLESS"
+align = 1
+
+[node name="Exit" parent="Levels" instance=ExtResource( 4 )]
+position = Vector2( 480, 113 )
+next_scene = "res://Start_Menu.tscn"
+
+[node name="Label" type="Label" parent="Levels/Exit"]
+margin_left = -17.0
+margin_top = 18.0
+margin_right = 18.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "EXIT"
+align = 1
+
+[node name="GameEnd" type="Area2D" parent="Levels"]
+position = Vector2( 541, 160 )
+rotation = 1.5708
+script = ExtResource( 8 )
+next_scene = "res://Congrats.tscn"
+
+[node name="Sprite" type="Sprite" parent="Levels/GameEnd"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/GameEnd"]
+scale = Vector2( 1.5, 1.5 )
+shape = SubResource( 4 )
+
+[node name="EntryLock" type="Sprite" parent="Levels/GameEnd"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="Levels/GameEnd"]
+margin_left = -33.0
+margin_top = 24.0
+margin_right = 32.0
+margin_bottom = 38.0
+theme = ExtResource( 7 )
+text = "Game
+End"
+align = 1
+
+[node name="Light2D" type="Light2D" parent="Levels"]
+visible = false
+position = Vector2( 2233, 260 )
+scale = Vector2( 10, 3 )
+texture = ExtResource( 9 )
+offset = Vector2( -188, -30 )
+color = Color( 0.611765, 0.611765, 0.611765, 1 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Levels"]
+visible = false
+color = Color( 0.694118, 0.694118, 0.694118, 1 )
+
+[node name="Sprite" type="Sprite" parent="Levels"]
+
+[node name="Item_Fuel" parent="." instance=ExtResource( 14 )]
+position = Vector2( 417, 292 )
+rotation = 3.14159
+
+[node name="SkorText" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = -50.0
+margin_right = 51.0
+margin_bottom = -10.0
+theme = ExtResource( 7 )
+
+[node name="UpgradeStation" parent="." instance=ExtResource( 3 )]
+position = Vector2( 357, 283 )
+
+[node name="Label" type="Label" parent="UpgradeStation"]
+margin_left = -17.0
+margin_top = 12.0
+margin_right = 18.0
+margin_bottom = 31.0
+rect_scale = Vector2( 1, 0.88 )
+custom_fonts/font = SubResource( 1 )
+text = "Upgrade
+Station"
+align = 1
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 361, 192 )

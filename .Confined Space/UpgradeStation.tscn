@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UpgradeStation.gd" type="Script" id=1]
+[ext_resource path="res://assets/Sprite/Object/Upgrade.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16, 16 )
+
+[node name="UpgradeStation" type="Area2D"]
+position = Vector2( 357, 289 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+margin_right = 87.0
+margin_bottom = 56.0
+hide_on_item_selection = false
+hide_on_checkable_item_selection = false
+
+[connection signal="area_entered" from="." to="." method="_on_UpgradeStation_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_UpgradeStation_area_exited"]
+[connection signal="id_pressed" from="PopupMenu" to="." method="_on_PopupMenu_id_pressed"]
