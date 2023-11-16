@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	print(OS.get_executable_path())
 	pass
 
 func _on_start_pressed():
@@ -22,5 +23,5 @@ func _on_reset_pressed():
 
 func _on_AcceptDialog_confirmed():
 	var dir = Directory.new()
-	dir.remove("user://save_file.save")
+	dir.remove(Global.SAVE_PATH)
 	get_tree().quit()

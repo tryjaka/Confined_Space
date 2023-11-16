@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH = "user://save_file.save"
+const SAVE_PATH = "res:///Saves/save_file.save"
 var save_data = {}
 
 var Health :int = 100
