@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH = "res:///Saves/save_file.save"
+const SAVE_PATH = "./save_file.save"
 var save_data = {}
 
 var Health :int = 100
@@ -13,6 +13,7 @@ var FixingToolUpgrade = false
 var FuelUpgrade = false
 var TrapAlert = false
 var FinishedLevel = [0,1,2,3,4,5,6,7]
+var medals = [0, 0, 0]
 
 var endless_width = 3
 var endless_height = 3
@@ -46,7 +47,7 @@ func reset():
 func load_game():
 	var save_file = File.new()
 	if not save_file.file_exists(SAVE_PATH):
-		save_data = {"Creds":Score, "Flashlight":FlashlightUpgrade, "FixingTool":FixingToolUpgrade, "Level":FinishedLevel}
+		save_data = {"Creds":Score, "Flashlight":FlashlightUpgrade, "FixingTool":FixingToolUpgrade, "Level":FinishedLevel, "Medal":medals}
 		save_game()
 	elif save_file.file_exists(SAVE_PATH):
 		save_file.open(SAVE_PATH,File.READ)
@@ -56,12 +57,14 @@ func load_game():
 		FlashlightUpgrade = save_data.Flashlight
 		FixingToolUpgrade = save_data.FixingTool
 		FinishedLevel = save_data.Level
+		medals = save_data.Medal
 
 func save_game():
 	var save_file = File.new()
 	save_data.Creds = Score
 	save_data.Flashlight = FlashlightUpgrade
 	save_data.FixingTool = FixingToolUpgrade
+	save_data.Medal = medals
 	save_file.open(SAVE_PATH, File.WRITE)
 	save_file.store_var(save_data)
 	save_file.close()

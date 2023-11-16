@@ -15,6 +15,14 @@ func _physics_process(delta):
 		if body.name == "Player":
 			#print_debug("end")
 			Global.add_score()
+			
+			if Global.addScore == 3:
+				Global.medals[0] += 1
+			elif Global.addScore == 2:
+				Global.medals[1] += 1
+			elif Global.addScore == 1:
+				Global.medals[2] += 1
+			
 			if Parent_Node == "Endless":
 				get_tree().change_scene("res://GameOver_endless.tscn")
 			else:

@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	print(OS.get_executable_path())
-	pass
+	Global.load_game()
+	print(Global.medals)
 
 func _on_start_pressed():
 	get_tree().change_scene("res://Main_Menu.tscn")
@@ -25,3 +25,8 @@ func _on_AcceptDialog_confirmed():
 	var dir = Directory.new()
 	dir.remove(Global.SAVE_PATH)
 	get_tree().quit()
+
+
+func _on_Stats_pressed():
+	var stats_screen = preload("res://Stats.tscn").instance()
+	add_child(stats_screen)

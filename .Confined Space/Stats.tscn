@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Stats.gd" type="Script" id=1]
+
+[node name="Stats" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -199, 17 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+color = Color( 0, 0, 0, 0.709804 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -25.0
+margin_right = 300.0
+margin_bottom = 25.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 120
+columns = 3
+
+[node name="gold" type="RichTextLabel" parent="GridContainer"]
+margin_right = 120.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 120, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="silver" type="RichTextLabel" parent="GridContainer"]
+margin_left = 240.0
+margin_right = 360.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 120, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bronze" type="RichTextLabel" parent="GridContainer"]
+margin_left = 480.0
+margin_right = 600.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 120, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 590.0
+margin_top = 13.0
+margin_right = 627.0
+margin_bottom = 45.0
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

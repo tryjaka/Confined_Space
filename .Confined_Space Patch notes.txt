@@ -8,8 +8,7 @@ v1.01
 v1.1.0(mobile)
 -change control layout
 
-
-v1.02
+v1.02 | v.1.2.0(mobile)
 -change save location 
  from Appdata/roaming/godot/app_userdata/project/save_file  ----->  project.exe/save_file
 -added player stats (medals)
