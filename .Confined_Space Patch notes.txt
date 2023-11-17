@@ -8,10 +8,11 @@ v1.01
 v1.1.0(mobile)
 -change control layout
 
-v1.02
--change save location 
- from Appdata/roaming/godot/app_userdata/project/save_file  ----->  project.exe/save_file
--added player stats (medals)
-
-v.1.2.0(mobile)
--added player stats (medals)
+v1.02 | v.1.2.0(mobile)
+-change save location [v1.02]
+ *from Appdata/roaming/godot/app_userdata/project/save_file  ----->  project.exe/save_file.
+-added player stats (medals).
+-using Boost in the main menu doesn't consume FUEL anymore.
+-change level progression
+ *lvl_1 & lvl_3 is locked after finishing the level once.
+ *lvl_5 & lvl_6 gives bonus creds (+5)
