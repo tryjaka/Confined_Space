@@ -2,3 +2,6 @@ SPRITE
 -boosting & turning give a hydrogen thrust effect (Interstellar)
 -Refueling gives a tube-like sprite attach to player from fuel_station (like an umbilical cord)
  if player is in range
+-flash red screen if player hurt by trap
+-flash blue screen if player refuel
+-playable tutorial (next game(?))
