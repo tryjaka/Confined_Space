@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://Font_Theme.tres" type="Theme" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/Sprite/door/Entryway Locked.png" type="Texture" id=14]
 [ext_resource path="res://assets/Sprite/Tab key.png" type="Texture" id=15]
 [ext_resource path="res://assets/Sprite/ESC key.png" type="Texture" id=16]
+[ext_resource path="res://assets/Sprite/F key.png" type="Texture" id=17]
 
 [node name="Tutorial" type="Control"]
 anchor_right = 1.0
@@ -238,7 +239,13 @@ text = "Flashlight
 
 Would give you
 the ability to
-see in dark levels"
+see in dark levels
+by pressing"
+
+[node name="FKey" type="Sprite" parent="Page2/Label4"]
+position = Vector2( 116, 99 )
+scale = Vector2( 0.3125, 0.3125 )
+texture = ExtResource( 17 )
 
 [node name="Page3" type="Control" parent="."]
 visible = false
@@ -286,9 +293,15 @@ margin_top = 92.0
 margin_right = 502.0
 margin_bottom = 161.0
 theme = ExtResource( 2 )
-text = "Collect 100 CREDS
+text = "Collect 50 CREDS
+and press   
 to Win the Game"
 align = 2
+
+[node name="EKey" type="Sprite" parent="Page3/Label3"]
+position = Vector2( 195, 83 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
 
 [node name="PlayerIdle" type="Sprite" parent="Page3"]
 position = Vector2( 313, 282 )
@@ -323,7 +336,7 @@ of FUEL"
 align = 2
 
 [node name="EscKey" type="Sprite" parent="Page3/Label5"]
-position = Vector2( 73, 8 )
+position = Vector2( 70, 8 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 16 )
 

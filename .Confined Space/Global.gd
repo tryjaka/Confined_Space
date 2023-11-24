@@ -27,6 +27,10 @@ func add_score():
 	Score += addScore
 	print("Score:",Score)
 	
+func add_score_bonus():
+	Score += 5
+	print("Score:",Score)
+	
 func add_maxfuel():
 	MAXFuel += 1000
 	print('MaxFuel = ', MAXFuel)

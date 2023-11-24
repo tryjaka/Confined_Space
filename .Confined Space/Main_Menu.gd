@@ -6,4 +6,4 @@ func _ready():
 
 func _physics_process(delta):
 	$SkorText.set_text("CREDS : "+str(Global.Score))
-	
+	Global.Fuel = 2000

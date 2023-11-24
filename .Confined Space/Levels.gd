@@ -47,5 +47,5 @@ func _physics_process(delta):
 	else:
 		$Endless.set_physics_process(false)
 		
-	if Global.Score >= 100:
+	if Global.Score >= 50:
 		$GameEnd/EntryLock.visible = false

@@ -40,6 +40,11 @@ animations = [ {
 "name": "Forward",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "TurnR_r",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "TurnL",
@@ -48,11 +53,6 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 1 ), ExtResource( 5 ) ],
 "loop": false,
 "name": "TurnL_r",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "TurnR_r",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],

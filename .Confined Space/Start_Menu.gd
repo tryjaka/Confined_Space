@@ -1,12 +1,20 @@
 extends Control
 
 func _ready():
+	var SAVE_PATH = Global.SAVE_PATH
+	var save_file = File.new()
+	
+	if not save_file.file_exists(SAVE_PATH):
+		print("no save file")
+		var tutorial_screen = preload("res://Tutorial.tscn").instance()
+		add_child(tutorial_screen)
+	
 	Global.load_game()
 	print(Global.medals)
 
 func _on_start_pressed():
 	get_tree().change_scene("res://Main_Menu.tscn")
-	$AudioStreamPlayer.play()
+	$AudioStreamPlayer.playing = true
 
 func _on_tutorial_pressed():
 	var tutorial_screen = preload("res://Tutorial.tscn").instance()
